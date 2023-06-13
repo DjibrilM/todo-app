@@ -3,6 +3,9 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
     mode: "development",
+    resolve: {
+        extensions: ['.js', '.json', '.wasm'], // Add your extensions here.
+    },
     entry: path.resolve(__dirname, "src/index.js"),
     output: {
         path: path.resolve(__dirname, 'dist'),
