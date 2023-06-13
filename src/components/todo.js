@@ -1,11 +1,9 @@
+const TodoElement = (content, isActive, id) => {
+  const element = document.createElement('li');
+  element.id = id;
+  if (isActive === true) { element.classList.add('active'); }
 
-
-export const TodoElement = (content, isActive, id) => {
-    const element = document.createElement("li");
-    element.id = id;
-    isActive === true && element.classList.add("active");
-
-    element.innerHTML = `
+  element.innerHTML = `
                 <div class="info">
                     <div class="todo-content">
                         <input type="checkbox">
@@ -26,7 +24,9 @@ export const TodoElement = (content, isActive, id) => {
                         <i class='bx bx-trash'></i>
                     </div>
                 </div>
-    `
+    `;
 
-    return element;
-}
+  return element;
+};
+
+export default TodoElement;

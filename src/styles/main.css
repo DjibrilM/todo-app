@@ -1,153 +1,149 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
 * {
-    margin: 0px;
-    padding: 0px;
+  margin: 0;
+  padding: 0;
 }
 
 :root {
-    --primary-colors: rgb(83, 82, 82);
-    --gray: #b6b5b5;
+  --primary-colors: rgb(83, 82, 82);
+  --gray: #b6b5b5;
 }
 
 body {
-    background: rgb(233, 232, 232);
-    font-family: 'Lato', sans-serif;
+  background: rgb(233, 232, 232);
+  font-family: 'Lato', sans-serif;
 }
 
 .container {
-    max-width: 700px;
-    min-height: 200px;
-    background: white;
-    border: 1px solid rgba(0, 0, 0, 0.178);
-    margin: 50px auto;
-    display: flex;
-    flex-direction: column;
+  max-width: 700px;
+  min-height: 200px;
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.178);
+  margin: 50px auto;
+  display: flex;
+  flex-direction: column;
 }
 
-
 .container .header {
-    padding: 10px 20px;
-    height: 50px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.136);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  padding: 10px 20px;
+  height: 50px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.136);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .container .header h1 {
-    font-size: 19px;
-    color: var(--primary-colors);
+  font-size: 19px;
+  color: var(--primary-colors);
 }
 
 .container .header i {
-    font-size: 20px;
-    cursor: pointer;
+  font-size: 20px;
+  cursor: pointer;
 }
 
 .container .form-container {
-    flex-basis: 100%;
-    width: 100%;
-    height: 60px;
-    display: flex;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.149);
-}
-
-.container .form-container form {
-    margin: 5px 20px;
-    width: 100%;
-}
-
-.container .form-container input {
-    outline: none;
-    border: none;
-    height: 50px;
-    width: 100%;
-    font-style: italic;
-}
-
-.container ul {
-    list-style: none;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    flex-basis: 100%;
-}
-
-.container ul li {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.201);
-}
-
-
-.container ul li .info {
-    padding: 30px 10px;
-    justify-content: space-between;
-    gap: 10px;
-    display: flex;
-}
-
-.container ul li .info .todo-content {
-    display: flex;
-    gap: 10px;
-}
-
-.container ul li .info .todo-content input {
-    cursor: pointer;
-}
-
-.container ul li .info .more i {
-    cursor: yellow;
-    font-size: 20px;
-    cursor: pointer;
-}
-
-.container ul li.active .info {
-    display: none;
-    background-color: yellow;
-}
-
-
-.container ul li .actions {
-    display: none;
-}
-
-.container ul li.active .actions {
-    display: flex;
-    gap: 40px;
-}
-
-.actions {
-    background-color: rgba(255, 166, 0, 0.105);
-    padding: 30px 10px;
-}
-
-.actions form {
-    flex-basis: 100%;
+  flex-basis: 100%;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.149);
 }
 
 .actions form input {
-    width: 100%;
-    font-size: 20px;
-    background: transparent;
-    outline: none;
-    border: none;
+  width: 100%;
+  font-size: 20px;
+  background: transparent;
+  outline: none;
+  border: none;
+}
+
+.actions form {
+  flex-basis: 100%;
+}
+
+.container .form-container form {
+  margin: 5px 20px;
+  width: 100%;
+}
+
+.container .form-container input {
+  outline: none;
+  border: none;
+  height: 50px;
+  width: 100%;
+  font-style: italic;
+}
+
+.container ul {
+  list-style: none;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+}
+
+.actions {
+  background-color: rgba(255, 166, 0, 0.105);
+  padding: 30px 10px;
+}
+
+.container ul li {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.201);
 }
 
 .actions .delete-btn i {
-    margin-right: 10px;
-    font-size: 25px;
-    cursor: pointer;
+  margin-right: 10px;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.container ul li .info {
+  padding: 30px 10px;
+  justify-content: space-between;
+  gap: 10px;
+  display: flex;
+}
+
+.container ul li .info .todo-content {
+  display: flex;
+  gap: 10px;
+}
+
+.container ul li .info .todo-content input {
+  cursor: pointer;
+}
+
+.container ul li .info .more i {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.container ul li.active .info {
+  display: none;
+  background-color: yellow;
+}
+
+.container ul li .actions {
+  display: none;
+}
+
+.container ul li.active .actions {
+  display: flex;
+  gap: 40px;
 }
 
 .clear-btn-container button {
-    margin-top: 40px;
-    padding: 20px;
-    width: 100%;
-    cursor: pointer;
-    outline: none;
-    border: none;
+  margin-top: 40px;
+  padding: 20px;
+  width: 100%;
+  cursor: pointer;
+  outline: none;
+  border: none;
 }
 
 .clear-btn-container button:active {
-    background-color: var(--gray);
+  background-color: var(--gray);
 }
