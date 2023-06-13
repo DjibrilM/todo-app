@@ -12,7 +12,8 @@ const todosList = [
     content: 'something2',
     id:2,
     isActive: false,
-  },
+    },
+  
   {
     content: 'something3',
     id: 3,
