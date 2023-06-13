@@ -4,18 +4,18 @@ import printElements from './utilities/printTodos.js';
 const todosList = [
   {
     content: 'something1',
-    id: new Date().toISOString(),
+    id: 1,
     isActive: false,
   },
 
   {
     content: 'something2',
-    id: new Date().toISOString(),
+    id:2,
     isActive: false,
   },
   {
     content: 'something3',
-    id: new Date().toISOString(),
+    id: 3,
     isActive: false,
   },
 ];
