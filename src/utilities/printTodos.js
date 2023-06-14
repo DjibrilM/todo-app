@@ -1,4 +1,4 @@
-import TodoElement from '../components/todo.js'; // eslint-disable-line
+import TodoElement from '../components/todo.js';
 
 const printElements = (containerClass, elements) => {
   const container = document.querySelector(`.${containerClass}`);

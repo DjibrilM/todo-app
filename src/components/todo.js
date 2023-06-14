@@ -1,8 +1,17 @@
-import printElements from '../utilities/printTodos'; // eslint-disable-line
-
 import { getItems, setItems } from '../utilities/localStorage';
 
 const TodoElement = (content, isActive, id) => {
+  // the following factory function is necessary because of linters
+  const printElements = (containerClass, elements) => {
+    const container = document.querySelector(`.${containerClass}`);
+    container.innerHTML = '';
+
+    if (elements.length > 0) {
+      elements.forEach((element) => {
+        container.appendChild(TodoElement(element.content, element.isActive, element.id));
+      });
+    }
+  };
   const element = document.createElement('li');
 
   element.id = id;
@@ -22,7 +31,7 @@ const TodoElement = (content, isActive, id) => {
 
                 <div class="actions">
                     <form action="">
-                        <input value="${content}" type="text" name="" id="">
+                        <input value="${content}" type="text" name="" class="update-input" id="">
                     </form>
 
                     <div class="delete-btn">
@@ -33,6 +42,8 @@ const TodoElement = (content, isActive, id) => {
 
   const deleteButton = element.querySelector('.bx-trash');
   const moreButton = element.querySelector('.more-btn');
+  const updateForm = element.querySelector('form');
+  const updateValueInput = element.querySelector('.update-input');
 
   moreButton.addEventListener('click', () => {
     const index = getItems('todos').findIndex((el) => el.id === id);
@@ -41,8 +52,20 @@ const TodoElement = (content, isActive, id) => {
     printElements('dotos-container', getList);
   });
 
+  updateForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const list = getItems('todos');
+    const findIndex = list.findIndex((el) => el.id === id);
+    console.log(updateValueInput);
+    list[findIndex].content = updateValueInput.value;
+    console.log(list);
+    list[findIndex].active = false;
+    setItems('todos', list);
+    printElements('dotos-container', getItems('todos'));
+  });
+
   deleteButton.addEventListener('click', () => {
-    const getTodos = JSON.parse(localStorage.getItem('todos'));
+    const getTodos = getItems('todos');
     const filtered = getTodos.filter((el) => el.id !== id);
 
     setItems('todos', filtered);
