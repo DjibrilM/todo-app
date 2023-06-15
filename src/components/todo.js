@@ -2,7 +2,6 @@ import { getItems, setItems } from '../utilities/localStorage';
 
 const TodoElement = (content, isActive, id, completed) => {
   // the following factory function is necessary because of linters
-  console.log(completed);
   const printElements = (containerClass, elements) => {
     const container = document.querySelector(`.${containerClass}`);
     container.innerHTML = '';
