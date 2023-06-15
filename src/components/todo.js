@@ -74,9 +74,7 @@ const TodoElement = (content, isActive, id, completed) => {
     e.preventDefault();
     const list = getItems('todos');
     const findIndex = list.findIndex((el) => el.id === id);
-    console.log(updateValueInput);
     list[findIndex].content = updateValueInput.value;
-    console.log(list);
     list[findIndex].active = false;
     setItems('todos', list);
     printElements('dotos-container', getItems('todos'));
