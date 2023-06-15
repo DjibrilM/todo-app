@@ -1,14 +1,21 @@
 import { getItems, setItems } from '../utilities/localStorage';
 
-const TodoElement = (content, isActive, id) => {
+const TodoElement = (content, isActive, id, completed) => {
   // the following factory function is necessary because of linters
+  console.log(completed);
   const printElements = (containerClass, elements) => {
     const container = document.querySelector(`.${containerClass}`);
     container.innerHTML = '';
 
     if (elements.length > 0) {
       elements.forEach((element) => {
-        container.appendChild(TodoElement(element.content, element.isActive, element.id));
+        container.appendChild(
+          TodoElement(
+            element.content,
+            element.isActive,
+            element.id, element.completed,
+          ),
+        );
       });
     }
   };
@@ -16,12 +23,13 @@ const TodoElement = (content, isActive, id) => {
 
   element.id = id;
   if (isActive === true) { element.classList.add('active'); }
+  if (completed === true) { element.classList.add('completed'); }
 
   element.innerHTML = `
                 <div class="info">
                     <div class="todo-content">
-                        <input type="checkbox">
-                        <p>${content}</p>
+                        <input ${completed && 'checked'} class="checker" type="checkbox">
+                        <p >${content}</p>
                     </div>
 
                     <div class="more">
@@ -44,6 +52,16 @@ const TodoElement = (content, isActive, id) => {
   const moreButton = element.querySelector('.more-btn');
   const updateForm = element.querySelector('form');
   const updateValueInput = element.querySelector('.update-input');
+  const checkboxInput = element.querySelector('.checker');
+
+  checkboxInput.addEventListener('click', () => {
+    const findeIndex = getItems('todos').findIndex((el) => el.id === id);
+
+    const getElements = getItems('todos');
+    getElements[findeIndex].completed = !getElements[findeIndex].completed;
+    setItems('todos', getElements);
+    printElements('dotos-container', getItems('todos'));
+  });
 
   moreButton.addEventListener('click', () => {
     const index = getItems('todos').findIndex((el) => el.id === id);

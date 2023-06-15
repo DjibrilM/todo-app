@@ -6,7 +6,14 @@ const printElements = (containerClass, elements) => {
 
   if (elements.length > 0) {
     elements.forEach((element) => {
-      container.appendChild(TodoElement(element.content, element.isActive, element.id));
+      container.appendChild(
+        TodoElement(
+          element.content,
+          element.isActive,
+          element.id,
+          element.completed,
+        ),
+      );
     });
   }
 };

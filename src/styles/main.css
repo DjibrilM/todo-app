@@ -147,3 +147,13 @@ body {
 .clear-btn-container button:active {
   background-color: var(--gray);
 }
+
+.completed p {
+  text-decoration: line-through;
+  color: gray;
+}
+
+.completed .checker {
+  width: 20px;
+  height: 20px;
+}

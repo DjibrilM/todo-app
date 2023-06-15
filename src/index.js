@@ -4,6 +4,7 @@ import { getItems, getLength, setItems } from './utilities/localStorage';
 
 const form = document.querySelector('.addForm');
 const contentInput = document.querySelector('.content');
+const clearAllButton = document.querySelector('.clear-all');
 
 const printLoadedTodos = () => {
   const loaded = getItems('todos');
@@ -17,7 +18,7 @@ const addTodo = (e) => {
   const newTodo = {
     content: contentInput.value,
     isActive: false,
-    isCompleted: false,
+    completed: false,
     id: getLength('todos') + 1,
   };
 
@@ -28,5 +29,13 @@ const addTodo = (e) => {
   contentInput.value = '';
 };
 
+const clearAll = () => {
+  const getAllItems = getItems('todos');
+  const filteredItems = getAllItems.filter((el) => el.completed === false);
+  setItems('todos', filteredItems);
+  printElements('dotos-container', getItems('todos'));
+};
+
 window.addEventListener('load', () => printLoadedTodos());
 form.addEventListener('submit', addTodo);
+clearAllButton.addEventListener('click', clearAll);
