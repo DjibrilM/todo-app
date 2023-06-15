@@ -9,7 +9,11 @@
 
 - [💻 Getting Started](#getting-started)
 
+  - [setup](#usage)
+  - [installation](#installation)
   - [Usage](#usage)
+  - [Run test](#run-tests)
+  - [Prerequisites](#prerequisites)
 
 - [👥 Authors](#authors)
 
@@ -44,12 +48,8 @@ This application is about an advanced to application that store contents on the 
 
 To get a local copy up and running, follow these steps.
 
-### Prerequisites
 
-In order to run this project you need:
 
-- <a href="https://nodejs.org/en/download">Node.js</a>
-- <a href="https://docs.npmjs.com/downloading-and-installing-node-js-and-npm">npm</a>
 
 ### Setup
 
@@ -60,7 +60,7 @@ Clone this repository to your desired folder:
   git clone git@github.com:myaccount/my-project.git
 ```
 
-### Install
+### Installation
 
 Install this project with:
 
@@ -78,7 +78,7 @@ npm run dev
 
 To run the linters, use `npm run lint .` from the root directory of the project.
 
-### Run tests
+### Run-tests
 
 There are currently no tests in this project.
 
