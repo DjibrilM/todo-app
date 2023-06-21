@@ -1,3 +1,4 @@
+
 {
   "env": {
     "browser": true,
@@ -16,19 +17,12 @@
     "react/jsx-filename-extension": [
       0
     ],
-    "import/no-cycle": [
-      "error",
-      {
-        "maxDepth": 10,
-        "ignoreExternal": true,
-        "allowUnsafeDynamicCyclicDependency": true
-      }
-    ],
     "import/extensions": "off",
     "no-shadow": "off",
     "no-param-reassign": "off",
     "eol-last": "off",
-    "no-cycle": "off"
+    "import/no-cycle": "off"
+
   },
   "ignorePatterns": [
     "dist/",
